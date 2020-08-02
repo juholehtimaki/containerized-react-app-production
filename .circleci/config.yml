@@ -5,7 +5,7 @@ jobs:
         working_directory: ~/app
         
         steps:
-            - checout
+            - checkout
             
             - run:
                 name: Build docker image
