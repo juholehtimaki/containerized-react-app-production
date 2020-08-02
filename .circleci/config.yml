@@ -9,7 +9,7 @@ jobs:
             
             - run:
                 name: Build docker image
-                command: docker build -t  contanerized-react-app-production
+                command: docker build -t  contanerized-react-app-production .
                 
             - run:
                 name: Push to heroku
