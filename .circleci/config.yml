@@ -17,4 +17,4 @@ jobs:
                     docker login --username=$HEROKU_LOGIN --password=$HEROKU_TOKEN registry.heroku.com
                     docker tag pipeline-app-docker registry.heroku.com/pipeline-app-docker/web
                     docker push registry.heroku.com/pipeline-app-docker/web
-                    heroku container:release web
+                    docker release registry.heroku.com/pipeline-app-docker/web
