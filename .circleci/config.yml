@@ -9,11 +9,12 @@ jobs:
             
             - run:
                 name: Build docker image
-                command: docker build -t  contanerized-react-app-production .
+                command: docker build -t  pipeline-app-docker .
                 
             - run:
                 name: Push to heroku
                 command: |
                     docker login --username=$HEROKU_LOGIN --password=$HEROKU_TOKEN registry.heroku.com
-                    docker tag contanerized-react-app-production registry.heroku.com/contanerized-react-app-production/web
-                    docker push registry.heroku.com/contanerized-react-app-production/web
+                    docker tag pipeline-app-docker registry.heroku.com/pipeline-app-docker/web
+                    docker push registry.heroku.com/pipeline-app-docker/web
+                    heroku container:release web
