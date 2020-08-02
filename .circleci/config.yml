@@ -14,6 +14,6 @@ jobs:
             - run:
                 name: Push to heroku
                 command: |
-                    docker login --username=$HEROKU_LOKIN --password=$HEROKU_TOKEN registry.heroku.com
+                    docker login --username=$HEROKU_LOGIN --password=$HEROKU_TOKEN registry.heroku.com
                     docker tag contanerized-react-app-production registry.heroku.com/contanerized-react-app-production/web
                     docker push registry.heroku.com/contanerized-react-app-production/web
